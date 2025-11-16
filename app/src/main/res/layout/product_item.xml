@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="#fff"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <!-- Image -->
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/reeen"/>
+
+        <!-- Category -->
+        <TextView
+            android:id="@+id/productCategory"
+            android:text="Shirt"
+            android:textSize="12sp"
+            android:textColor="#999"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/productTitle"
+            android:text="Essentials Men's Short-Sleeve T-Shirt"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:maxLines="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Rating -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_star"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/productRating"
+                android:text="4.9 | 2356"
+                android:textSize="12sp"
+                android:textColor="#666"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/productPrice"
+            android:text="$12.00"
+            android:textSize="16sp"
+            android:textColor="#3CB371"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Favorite Icon -->
+        <ImageView
+            android:id="@+id/favIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_heart"
+            android:layout_gravity="end"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
