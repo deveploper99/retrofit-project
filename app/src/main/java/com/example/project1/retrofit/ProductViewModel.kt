@@ -10,19 +10,13 @@ import kotlinx.coroutines.launch
 class ProductViewModel : ViewModel() {
 
     private val _products = MutableLiveData<List<ProductModel>>()
-    val producs: LiveData<List<ProductModel>> get() = _products
+    val producs: LiveData<List<ProductModel>> get() = _products   // FIXED
 
-    init {
-        // Optional: fetch on init
-        // fetchProducts()
-    }
-
-    // Public function to fetch products
     fun fetchProducts() {
         viewModelScope.launch {
             try {
-                val response = ApiClient.apiServices.getProduct() // suspend function
-                _products.postValue(response.products)
+                val response = ApiClient.apiServices.getProduct()  // suspend function
+                _products.postValue(response.products)             // products list
             } catch (e: Exception) {
                 e.printStackTrace()
             }

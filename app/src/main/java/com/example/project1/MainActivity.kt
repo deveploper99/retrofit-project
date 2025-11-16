@@ -1,5 +1,8 @@
 package com.example.project1
 
+
+
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -34,11 +37,28 @@ class MainActivity : AppCompatActivity() {
        // adapter = ProductAdapter(mutableListOf())
 
         // Adapter setup with mutable list
-        adapter = ProductAdapter(productList) { position ->
-            val product = productList[position]
-            product.isFavorite = !product.isFavorite
-            adapter.notifyItemChanged(position)
-        }
+//        adapter = ProductAdapter(productList) { position ->
+//            val product = productList[position]
+//            product.isFavorite = !product.isFavorite
+//            adapter.notifyItemChanged(position)
+//
+//        }
+
+        adapter = ProductAdapter(
+            productList,
+
+            onFavoriteClick = { position ->
+                val product = productList[position]
+                product.isFavorite = !product.isFavorite
+                adapter.notifyItemChanged(position)
+            },
+
+            onItemClick = { product ->
+                val intent = Intent(this, DetailsActivity::class.java)
+                intent.putExtra("product", product)
+                startActivity(intent)
+            }
+        )
 
         binding.productGrid.layoutManager = GridLayoutManager(this, 2)
         binding.productGrid.adapter = adapter

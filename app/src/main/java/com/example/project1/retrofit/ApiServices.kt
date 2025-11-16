@@ -1,6 +1,5 @@
 package com.example.project1.retrofit
 
-import com.example.project1.model.ProductModel
 import com.example.project1.model.ProductResponse
 import retrofit2.http.GET
 

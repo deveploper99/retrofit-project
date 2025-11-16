@@ -62,6 +62,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.9.4")
     //noinspection UseTomlInstead
 
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 
 
 

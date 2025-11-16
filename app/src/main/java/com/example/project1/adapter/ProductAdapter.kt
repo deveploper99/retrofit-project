@@ -11,7 +11,8 @@ import com.example.project1.model.ProductModel
 
 class ProductAdapter(
     private val productList: List<ProductModel>,
-    private val onFavoriteClick:(position: Int) -> Unit
+    private val onFavoriteClick:(position: Int) -> Unit,
+    private val onItemClick :(ProductModel) -> Unit
 
 ): RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
@@ -50,6 +51,11 @@ class ProductAdapter(
 
         binding.favIcon.setOnClickListener {
             onFavoriteClick(position)
+        }
+
+
+        binding.root.setOnClickListener {
+            onItemClick(product)
         }
 
 
