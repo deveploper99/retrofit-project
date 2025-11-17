@@ -2,4 +2,5 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
     </style>
+
 </resources>
