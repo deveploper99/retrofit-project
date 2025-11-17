@@ -26,6 +26,7 @@ class ProductAdapter(
         viewType: Int
     ): ProductAdapter.ProductViewHolder {
         val binding = ProductItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+
         return ProductViewHolder(binding)
     }
 

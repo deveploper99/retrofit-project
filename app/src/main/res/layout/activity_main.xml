@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#FFFFFF">
+    tools:context=".MainActivity">
 
     <!-- Profile Section -->
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
+        android:id="@+id/profileImageProfile"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
-        android:src="@drawable/circal"
+        android:src="@drawable/rassel"
         app:civ_border_width="2dp"
         app:civ_border_color="#000000"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +30,8 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#4B4A4A"
-        app:layout_constraintStart_toEndOf="@id/profile_image"
-        app:layout_constraintTop_toTopOf="@id/profile_image"
+        app:layout_constraintStart_toEndOf="@id/profileImageProfile"
+        app:layout_constraintTop_toTopOf="@id/profileImageProfile"
         app:layout_constraintEnd_toStartOf="@+id/topIcons"/>
 
     <TextView
@@ -45,6 +47,7 @@
         app:layout_constraintTop_toBottomOf="@id/welcomeText"
         app:layout_constraintEnd_toEndOf="@id/welcomeText"/>
 
+    <!-- Top Icons -->
     <LinearLayout
         android:id="@+id/topIcons"
         android:layout_width="wrap_content"
@@ -53,14 +56,35 @@
         android:gravity="center"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/profile_image"
+        app:layout_constraintTop_toTopOf="@id/profileImageProfile"
         app:layout_constraintBottom_toBottomOf="@id/textView">
 
-        <ImageView
-            android:layout_width="26dp"
-            android:layout_height="26dp"
-            android:src="@drawable/ic_cart"
-            android:contentDescription="Cart"/>
+        <!-- Cart with Badge -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/cartIcon"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_cart"
+                android:contentDescription="Cart"/>
+
+            <!-- Badge -->
+            <TextView
+                android:id="@+id/cartBadge"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignEnd="@id/cartIcon"
+                android:layout_alignTop="@id/cartIcon"
+                android:background="@drawable/circle_red_bg"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+        </RelativeLayout>
 
         <Space android:layout_width="16dp" android:layout_height="1dp"/>
 
@@ -83,7 +107,7 @@
         app:cardCornerRadius="12dp"
         app:cardElevation="2dp"
         app:cardBackgroundColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/profile_image"
+        app:layout_constraintTop_toBottomOf="@id/profileImageProfile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -121,8 +145,6 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_filter"
                 android:tint="#3CB3D0"/>
-
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

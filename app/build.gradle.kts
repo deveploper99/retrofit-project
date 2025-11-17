@@ -64,7 +64,10 @@ dependencies {
 
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
+// SwipeRevealLayout by Chauthai
+    implementation("com.github.hydrated:SwipeRevealLayout:1.5.3")
 
+// Optional: Daimajia SwipeLayout (তুমি চাইলে ব্যবহার করতে পারো
 
 
     //glide

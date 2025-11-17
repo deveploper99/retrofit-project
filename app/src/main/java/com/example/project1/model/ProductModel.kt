@@ -2,12 +2,11 @@ package com.example.project1.model
 
 import java.io.Serializable
 
-
 data class ProductModel(
-    val title:String,
-    val thumbnail:String,
-    val price : Double,
-    val category : String,
+    val title: String,
+    val thumbnail: String,
+    val price: Double,
+    val category: String,
     val rating: String,
     var isFavorite: Boolean = false,
     val discountPercentage: Double,
@@ -24,29 +23,10 @@ data class ProductModel(
     val description: String,
     val dimensions: Dimensions,
     val review: Review,
-    val metaData: MetaData
-): Serializable
+    val metaData: MetaData,
+    var quantity: Int = 1  // quantity track করার জন্য
+) : Serializable
 
-
-data class Dimensions(
-    val width: Double,
-    val height: Double,
-    val depth: Double
-): Serializable
-
-
-data class Review(
-    val rating: Int,
-    val comment: String,
-    val date: String,
-    val reviewerName: String,
-    val reviewerEmail: String
-): Serializable
-
-data class MetaData(
-    val createdAt: String,
-    val updatedAt: String,
-    val barcode: String,
-    val qrCode: String
-): Serializable
-
+data class Dimensions(val width: Double, val height: Double, val depth: Double) : Serializable
+data class Review(val rating: Int, val comment: String, val date: String, val reviewerName: String, val reviewerEmail: String) : Serializable
+data class MetaData(val createdAt: String, val updatedAt: String, val barcode: String, val qrCode: String) : Serializable
